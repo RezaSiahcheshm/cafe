@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -10,7 +11,10 @@ class MenuController extends Controller
 
     public function index()
     {
-        //
+//        return Product::find(1)->addons()->get();
+        return view('menu.index', [
+            'products' => Product::all(),
+        ]);
     }
 
 
